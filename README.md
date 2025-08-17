@@ -1,6 +1,6 @@
 # Guía paso a paso – HelloApi (.NET 8 + SQL Server en Docker)
 
-Esta guía documenta cómo preparar el entorno, configurar la base de datos, ejecutar la API, crear migraciones, probar endpoints y conectarse desde TablePlus. Puedes copiar este contenido a un archivo de Word si lo necesitas.
+Esta guía documenta cómo preparar el entorno, configurar la base de datos, ejecutar la API, crear migraciones.
 
 ---
 
