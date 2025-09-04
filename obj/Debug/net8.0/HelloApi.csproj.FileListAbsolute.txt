@@ -134,3 +134,4 @@
 /Users/pabloispache/Documents/UMG/HelloApi/obj/Debug/net8.0/HelloApi.pdb
 /Users/pabloispache/Documents/UMG/HelloApi/obj/Debug/net8.0/HelloApi.genruntimeconfig.cache
 /Users/pabloispache/Documents/UMG/HelloApi/obj/Debug/net8.0/ref/HelloApi.dll
+/Users/pabloispache/Documents/UMG/HelloApi/obj/Debug/net8.0/HelloApi.sourcelink.json

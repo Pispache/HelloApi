@@ -52,4 +52,15 @@ public class MessageController : ControllerBase
         if (!deleted) return NotFound();
         return NoContent();
     }
+
+    // # Crear mensaje
+    // curl -X POST "http://localhost:5001/api/message" -H "Content-Type: application/json" -d '{"message": "Tu mensaje aquí"}'
+    // # Obtener todos
+    // curl -X GET "http://localhost:5001/api/message"
+    // # Obtener por ID
+    // curl -X GET "http://localhost:5001/api/message/1"
+    // # Actualizar
+    // curl -X PUT "http://localhost:5001/api/message/1" -H "Content-Type: application/json" -d '{"message": "Mensaje actualizado"}'
+    // # Eliminar
+    // curl -X DELETE "http://localhost:5001/api/message/1"
 }

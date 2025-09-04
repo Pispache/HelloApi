@@ -17,6 +17,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 builder.Services.AddScoped<IMessageService, MessageService>();
 
+// Order System Dependencies
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IItemRepository, ItemRepository>();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
 // CORS
 var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>() ?? [];
 builder.Services.AddCors(options =>
@@ -30,6 +36,25 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// Aplicar migraciones automáticamente en desarrollo
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    try
+    {
+        context.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Error occurred creating the database.");
+    }
+}
+
+// Configure static files - redirect to orders.html as default
+app.UseStaticFiles();
+app.MapFallbackToFile("orders.html");
 
 app.UseCors("CorsPolicy");
 app.UseSwagger();
