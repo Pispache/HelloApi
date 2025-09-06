@@ -23,13 +23,12 @@ builder.Services.AddScoped<IItemRepository, ItemRepository>();
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 
-// CORS
-var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>() ?? [];
+// CORS - Allow any origin for remote frontend
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder =>
     {
-        builder.WithOrigins(allowedOrigins)
+        builder.AllowAnyOrigin()
                .AllowAnyHeader()
                .AllowAnyMethod();
     });
@@ -52,10 +51,7 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-// Configure static files - redirect to orders.html as default
-app.UseStaticFiles();
-app.MapFallbackToFile("orders.html");
-
+// Backend only serves API - no static files
 app.UseCors("CorsPolicy");
 app.UseSwagger();
 app.UseSwaggerUI();

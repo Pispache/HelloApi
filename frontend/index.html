@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloApi Frontend</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="container">
+            <a class="navbar-brand" href="orders.html"><i class="fas fa-shopping-cart me-2"></i>HelloApi</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="messages.html">
+                    <i class="fas fa-comments me-1"></i>Mensajes
+                </a>
+                <a class="nav-link" href="items.html">
+                    <i class="fas fa-box me-1"></i>Items
+                </a>
+                <a class="nav-link" href="persons.html">
+                    <i class="fas fa-users me-1"></i>Personas
+                </a>
+                <a class="nav-link" href="orders-form.html">
+                    <i class="fas fa-plus me-1"></i>Nueva Orden
+                </a>
+                <a class="nav-link" href="orders.html">
+                    <i class="fas fa-list me-1"></i>Ver Órdenes
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                        <h3><i class="fas fa-shopping-cart me-2"></i>HelloApi - Sistema de Gestión</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="lead">Bienvenido al sistema de gestión de órdenes</p>
+                        <p class="text-muted">Frontend separado ejecutándose independientemente del backend</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-3">
+                                <a href="orders.html" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-list me-2"></i>Ver Órdenes
+                                </a>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <a href="orders-form.html" class="btn btn-success btn-lg w-100">
+                                    <i class="fas fa-plus me-2"></i>Nueva Orden
+                                </a>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <a href="items.html" class="btn btn-info btn-lg w-100">
+                                    <i class="fas fa-box me-2"></i>Gestionar Items
+                                </a>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <a href="persons.html" class="btn btn-warning btn-lg w-100">
+                                    <i class="fas fa-users me-2"></i>Gestionar Personas
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        <small class="text-muted">
+                            <i class="fas fa-server me-1"></i>Backend API: http://localhost:5001/api
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

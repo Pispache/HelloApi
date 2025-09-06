@@ -18,19 +18,28 @@ services:
     networks:
       - app-network
 
+  helloapi-frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    container_name: helloapi-frontend
+    networks:
+      - app-network
+
   helloapi:
     build: .
-    container_name: helloapi
     ports:
-      - "5001:8080"
+      - "5001:5001"
+    container_name: helloapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:8080
-      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=MessageDb;User Id=sa;Password=YourStrongPassword123;TrustServerCertificate=True;
+      - ASPNETCORE_URLS=http://+:5001
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=MessageDb;User Id=sa;Password=YourStrongPassword123;TrustServerCertificate=true;
     depends_on:
       sqlserver:
         condition: service_healthy
-    restart: unless-stopped
     networks:
       - app-network
 

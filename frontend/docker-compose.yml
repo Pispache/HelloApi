@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  # Frontend Container - Solo HTML/CSS/JS
+  frontend:
+    build: .
+    ports:
+      - "3000:80"
+    container_name: helloapi-frontend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
